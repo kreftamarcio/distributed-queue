@@ -1,0 +1,52 @@
+{
+  "name": "@q1-digital/distributed-queue",
+  "version": "0.1.0",
+  "description": "Distributed task queue with effectively-once processing, visibility timeouts, priority lanes with starvation prevention, and consumer groups",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:chaos": "vitest --config vitest.chaos.config.ts",
+    "lint": "eslint src/ --ext .ts",
+    "format": "prettier --write 'src/**/*.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "queue",
+    "task-queue",
+    "distributed-systems",
+    "dead-letter-queue",
+    "visibility-timeout",
+    "consumer-groups",
+    "backpressure",
+    "redis",
+    "postgresql",
+    "typescript"
+  ],
+  "author": "Marcio Krefta <q1digitalfreela@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ioredis": "^5.4.0",
+    "pg": "^8.12.0",
+    "zod": "^3.23.0",
+    "pino": "^9.1.0",
+    "eventemitter3": "^5.0.1",
+    "@opentelemetry/api": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "@types/pg": "^8.11.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "tsx": "^4.10.0",
+    "eslint": "^9.3.0",
+    "prettier": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
